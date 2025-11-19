@@ -1,0 +1,149 @@
+/* Reset */
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+padding: 10px 20px;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.navbar a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+.nav__links {
+list-style: none;
+display: flex;
+gap: 20px;
+margin: 0;
+padding: 0;
+}
+
+.nav__links li a {
+color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+height: 400px;
+background-image: url("Philippines-2196x1406.jpg");
+background-size: cover;
+background-position: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: white;
+text-shadow: 2px 2px 5px black;
+text-align: center;
+position: relative;
+}
+
+/* About Section */
+.about {
+padding: 50px 20px;
+background-color: #f4f4f4;
+text-align: center;
+}
+
+.about img {
+width: 100%;
+max-width: 500px;
+margin-top: 20px;
+border-radius: 10px;
+}
+
+/* Gallery Section as Carousel */
+.gallery {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* space between images */
+    margin: auto;
+}
+
+.carousel-item {
+    width: 250px;
+    height: 180px; /* fixed height */
+    flex-shrink: 0;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+    filter: blur(4px);
+    opacity: 0.5;
+    object-fit: cover; /* makes all images same size */
+}
+
+.carousel-item.active {
+    filter: blur(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Widget*/
+.activity-widget {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.activity-widget select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.activity-widget p {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Music Section */
+.music-widget {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.music-widget button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #fff;
+}
+
+/* Footer */
+footer {
+text-align: center;
+padding: 20px;
+background-color: #333;
+color: white;
+}
+
+/* Smooth Scroll */
+html {
+scroll-behavior: smooth;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Page</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav__logo"><a href="#home">Travel Page</a></div>
+        <ul class="nav__links">
+            <li class="link"><a href="#home">Home</a></li>
+            <li class="link"><a href="#about">About</a></li>
+            <li class="link"><a href="#gallery">Gallery</a></li>
+            <li class="link"><a href="#activity">Activity</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home / Hero Section -->
+    <header id="home" class="hero">
+        <h1>Welcome to the Philippines</h1>
+        <p>Explore the Beauty of the Pearl of the Orient Seas</p>
+    </header>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About the Philippines</h2>
+        <p>The Philippines is an archipelago of more than 7,000 islands, known for its stunning beaches, vibrant culture, and warm hospitality. Visitors can explore tropical paradises like Palawan and Boracay, hike volcanic landscapes like Mount Mayon, experience rich history in Manila and Cebu, and enjoy delicious local cuisine such as adobo and lechon. With its beautiful islands, colorful festivals, and friendly people, the Philippines is truly a destination for unforgettable experiences.</p>
+        <img src="eb6e3fb73d68c13c82b677b25a8d42ac.jpg" alt="Philippines">
+    </section>
+
+
+    <!-- Gallery Section as Carousel -->
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="carousel-container">
+            <img src="palawan.jpg" class="carousel-item active" alt="Palawan">
+            <img src="boracay.jpg" class="carousel-item" alt="Boracay">
+            <img src="banaue rice terraces.jpg" class="carousel-item" alt="Banaue Rice Terraces">
+            <img src="chocolate hills.jpg" class="carousel-item" alt="Chocolate Hills">
+            <img src="vigan.jpg" class="carousel-item" alt="Vigan">
+            <img src="intramuros.jpg" class="carousel-item" alt="Vigan">
+        </div>
+    </section>
+
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        let current = 0;
+
+        function showNext() {
+            items.forEach(item => item.classList.remove('active'));
+            current = (current + 1) % items.length;
+            items[current].classList.add('active');
+        }
+        // Auto-slide every 3 seconds
+        setInterval(showNext, 3000);
+
+    </script>
+
+    <!-- Dropdown Widget Section -->
+    <section id="activity" class="activity-widget">
+        <h2>Pick Your Favorite Philippine Activity</h2>
+        <select id="activity-select">
+            <option value="" disabled selected>Choose an activity</option>
+            <option value="island-hopping">Island Hopping</option>
+            <option value="hiking">Hiking / Mountain Trekking</option>
+            <option value="diving">Diving / Snorkeling</option>
+            <option value="cultural-tour">Cultural Tour</option>
+            <option value="beach-relax">Beach Relaxation</option>
+        </select>
+        <p id="selected-activity"></p>
+    </section>
+
+    <script>
+        const select = document.getElementById('activity-select');
+        const output = document.getElementById('selected-activity');
+
+        select.addEventListener('change', () => {
+            output.textContent = `You selected: ${select.options[select.selectedIndex].text}`;
+        });
+    </script>
+
+    <!-- Music Section -->
+    <section id="music" class="music-widget">
+        <h2>Listen to Philippine Music</h2>
+        <audio id="bg-music" loop>
+            <source src="kulintang-rhythm-20-216422.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div>
+            <button id="music-toggle">Play Music</button>
+        </div>
+    </section>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('music-toggle');
+
+        // Initially paused, user can start
+        toggleBtn.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                toggleBtn.textContent = 'Pause Music';
+            } else {
+                music.pause();
+                toggleBtn.textContent = 'Play Music';
+            }
+        });
+    </script>
+
+    <!-- Footer --> 
+     <footer> <p>© 2025 Travel Philippines</p> </footer>
+
+</body>
+</html>
